@@ -9,7 +9,7 @@ module Geet
   module Github
     class ApiInterface
       API_AUTH_USER = '' # We don't need the login, as the API key uniquely identifies the user
-      API_BASE_URL = 'https://api.github.com'
+      API_ROOT_ENDPOINT = 'https://api.github.com'
 
       # repo_path: optional for operations that don't require a repository, eg. gist creation.
       # upstream:  boolean; makes sense only when :repo_path is set.
@@ -71,7 +71,7 @@ module Geet
       private
 
       def api_url(api_path)
-        url = API_BASE_URL
+        url = API_ROOT_ENDPOINT
 
         if !api_path.start_with?('/')
           raise 'Missing repo path!' if @repository_path.nil?

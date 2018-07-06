@@ -8,7 +8,7 @@ require 'json'
 module Geet
   module Gitlab
     class ApiInterface
-      API_BASE_URL = 'https://gitlab.com/api/v4'
+      API_ROOT_ENDPOINT = 'https://gitlab.com/api/v4'
 
       # repo_path: "path/namespace"; required for the current GitLab operations.
       # upstream:  boolean; required for the current GitLab operations.
@@ -78,7 +78,7 @@ module Geet
       private
 
       def api_url(api_path)
-        "#{API_BASE_URL}/#{api_path}"
+        "#{API_ROOT_ENDPOINT}/#{api_path}"
       end
 
       def send_http_request(address, params: nil, data: nil, http_method: nil)
