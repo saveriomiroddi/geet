@@ -14,7 +14,7 @@ module Geet
       # Endpoint: https://docs.gitlab.com/ee/api/issues.html#list-issues
       #
       def self.list(api_interface, assignee: nil, milestone: nil)
-        api_path = "projects/#{api_interface.path_with_namespace(encoded: true)}/issues"
+        api_path = "issues"
 
         request_params = {}
         request_params[:assignee_id] = assignee.id if assignee

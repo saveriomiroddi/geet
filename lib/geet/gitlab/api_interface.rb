@@ -78,7 +78,13 @@ module Geet
       private
 
       def api_url(api_path)
-        "#{API_ROOT_ENDPOINT}/#{api_path}"
+        url = API_ROOT_ENDPOINT
+
+        if !api_path.start_with?('/')
+          url += "/projects/#{path_with_namespace(encoded: true)}/"
+        end
+
+        url + api_path
       end
 
       def send_http_request(address, params: nil, data: nil, http_method: nil)
