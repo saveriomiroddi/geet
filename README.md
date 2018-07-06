@@ -17,6 +17,7 @@ Everything is tracked in detail via [issues](https://github.com/saveriomiroddi/g
 The functionalities currently supported are:
 
 - Github/Gitlab:
+  - create issue
   - create label
   - list issues
   - list labels
@@ -25,7 +26,6 @@ The functionalities currently supported are:
   - merge PR
 - Github:
   - create gist
-  - create issue
   - create PR
 
 ## Samples
